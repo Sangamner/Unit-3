@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .main{
+           margin: auto;
+           border: 1px solid black;
+           width: 70%;
+           
+       }
+       .dice{
+           display: flex;
+           gap:90px;
+           height: 50px;
+           
+           margin: auto;
+       }
+       .inner{
+           display: grid;
+           grid-template-rows: repeat(2fr,25%);
+           
+       }
+       p{
+           color: black;
+        
+       }
+       button{
+         margin-top: 20px;
+         margin-top: 180px;
+         margin-left: 40%;
+         
+       }
+       #member-1, #member-2, #member-3{
+           height: 100px;
+           width: 100%;
+           padding-left: 60px;
+           padding-top: 60px;
+           font-size: 50px;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="winner"></div>
+   <div class="dice">
+     <div class="inner">
+        <p>Member A </p>
+        <div id="member-1"></div>
+     </div>
+     <div class="inner">
+        <p>Member B </p>
+        <div id="member-2"></div>
+    </div>
+    <div class="inner">
+        <p>Member C </p>
+        <div id="member-3"></div>
+    </div>
+   </div>
+  
+    <button onclick="Roll()">ROLL THE DICE</button>
+    </div>
+</body>
+</html>
+<script>
+function Roll(){
+    const a=   Math.ceil(Math.random()*6)
+    document.getElementById("member-1").innerText=a;
+     
+    const b=   Math.ceil(Math.random()*6)
+    document.getElementById("member-2").innerText=b;
+
+    const c=   Math.ceil(Math.random()*6)
+    document.getElementById("member-3").innerText=c;
+
+    if(a>b&&a>c){
+        document.getElementById("winner").innerText=`Member A is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="green"
+    }
+    if(b>a&&b>c){
+        document.getElementById("winner").innerText=`Member B is winner and score is ${b}`;
+        document.querySelector("#member-2").style.backgroundColor="green"
+    }
+    if(c>a&&c>b){
+        document.getElementById("winner").innerText=`Member C is winner and score is ${c}`;
+        document.querySelector("#member-3").style.backgroundColor="green"
+    }
+    if(a==b==c){
+            document.querySelector("#member-1").style.backgroundColor="blue"
+            document.querySelector("#member-2").style.backgroundColor="blue"
+            document.querySelector("#member-3").style.backgroundColor="blue"
+            document.getElementById("winner").innerText=`All are winner and score is  ${a}`;
+        }
+        if(a==b&&a>c){
+            document.querySelector("#member-1").style.backgroundColor="blue"
+            document.querySelector("#member-2").style.backgroundColor="blue"
+            document.querySelector("#member-3").style.backgroundColor="red"
+            document.getElementById("winner").innerText=`Member A and Member B is winner and score is ${a}`;
+        }
+        if(a==c&&b<c){
+            document.querySelector("#member-1").style.backgroundColor="blue"
+            document.querySelector("#member-3").style.backgroundColor="blue"
+            document.querySelector("#member-2").style.backgroundColor="red"
+            document.getElementById("winner").innerText=`Member A and Member C is winner and score is ${a}`;
+        }
+        if(b==c&&a<c){
+            document.querySelector("#member-2").style.backgroundColor="blue"
+            document.querySelector("#member-3").style.backgroundColor="blue"
+            document.querySelector("#member-1").style.backgroundColor="red"
+            document.getElementById("winner").innerText=`Member B and Member C is winner and score is ${b}`;
+        }
+        if(a>b&&b>c){
+            document.getElementById("winner").innerText=`Member A  is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="green"
+        document.querySelector("#member-2").style.backgroundColor="yellow"
+        document.querySelector("#member-3").style.backgroundColor="red"
+    }
+    if(b>a&&a>c){
+        document.getElementById("winner").innerText=` Member B is winner and score is ${b}`;
+        document.querySelector("#member-1").style.backgroundColor="yellow"
+        document.querySelector("#member-2").style.backgroundColor="green"
+        document.querySelector("#member-3").style.backgroundColor="red"
+    }
+    if(c>a&&a>b){
+        document.getElementById("winner").innerText=`Member C is winner and score is ${c}`;
+        document.querySelector("#member-1").style.backgroundColor="yellow"
+        document.querySelector("#member-3").style.backgroundColor="green"
+        document.querySelector("#member-2").style.backgroundColor="red"
+    }
+    if(a>b>c){
+        document.getElementById("winner").innerText=`Member A is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="green"
+        document.querySelector("#member-3").style.backgroundColor="yellow"
+        document.querySelector("#member-2").style.backgroundColor="red"
+    }
+    if(b>a>c){
+        document.getElementById("winner").innerText=`Member B is winner and score is ${b}`;
+        document.querySelector("#member-1").style.backgroundColor="yellow"
+        document.querySelector("#member-3").style.backgroundColor="red"
+        document.querySelector("#member-2").style.backgroundColor="green"
+    }
+    if(c>a>b){
+        document.getElementById("winner").innerText=`Member C is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="yellow"
+        document.querySelector("#member-3").style.backgroundColor="red"
+        document.querySelector("#member-2").style.backgroundColor="green"
+    }
+    if(a>c>b){
+        document.getElementById("winner").innerText=`Member A is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="green"
+        document.querySelector("#member-3").style.backgroundColor="red"
+        document.querySelector("#member-2").style.backgroundColor="yellow"
+    }
+    
+    if(b>c>a){
+        document.getElementById("winner").innerText=`Member A is winner and score is ${a}`;
+        document.querySelector("#member-1").style.backgroundColor="red"
+        document.querySelector("#member-3").style.backgroundColor="yellow"
+        document.querySelector("#member-2").style.backgroundColor="green"
+    }
+   
+    
+}
+
+</script>
