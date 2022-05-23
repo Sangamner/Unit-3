@@ -1,0 +1,23 @@
+h2{
+    text-align: center;
+   margin-right: 180px;
+}
+form{
+    display: grid;
+    width: 25%;
+    margin: auto;
+    gap: 20px;
+}
+ #navbar button{
+      margin-left: 38%;
+}
+input{
+    height: 25px;
+}
+button{
+    height: 25px;
+}
+a{
+    text-decoration: none;
+    color: black;
+  }
