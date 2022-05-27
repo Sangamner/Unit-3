@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr=[1,2,3]
+let  arr2= new Array(1,2,3)
+// console.log(arr2)
+
+function myarray(a,b,c){
+    console.log(arguments)
+    //arguments
+    Object.defineProperty(this,"length",{
+        value:0,
+        writable:true,
+        enumerable:false
+
+    })
+    this.length=arguments.length
+    for(let i=0;i<arguments.length;i++){
+        this[i]=arguments[i];
+    }
+}
+let  arr3= new myarray(1,2,3,4,5,6)
+console.log(arr3)
+console.log(Object.values(arr3))
+
+
+
+myarray.prototype.push=function(value){
+ this[this.length]=value;
+ this.length++;
+}
+
+
+myarray.prototype.pop=function(){
+ delete this[this.length-1];
+ this.length--;
+}
+arr3.push(7)
+arr3.push(8)
+arr3.pop()
+arr3.pop()
+arr3.push(7)
+console.log(Object.values(arr3))
+console.log(arr3)
+console.log("Size of array:",arr3.length)
+for(var i=0;i<arr3.length;i++){
+    console.log(arr3[i])
+}
+</script>
