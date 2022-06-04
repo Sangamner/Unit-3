@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #show_videos{
+            width: 25%;
+            text-align: center;
+            margin: auto;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video</h1>
+    <div id="show_videos"></div>
+</body>
+</html>
+<script>
+
+  let data=JSON.parse(localStorage.getItem("video"))
+  console.log(data)
+    
+  let div = document.createElement("div");
+         let iframe = document.createElement("iframe");
+         iframe.src=  `https://www.youtube.com/embed/${data.videoId}`;
+         iframe.width="100%";
+         iframe.height="100%";
+         iframe.allow="fullscreen";
+         let h3 = document.createElement("h3");
+         h3.innerText=data.title;
+         div.append(iframe,h3);
+        show_videos.append(div);
+        document.getElementById("qurey").value=null;
+    
+</script>
