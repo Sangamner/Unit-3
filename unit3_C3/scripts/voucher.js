@@ -38,14 +38,22 @@ function append(data){
       container.append(div)
   })
 }
-
+let arr=[]||JSON.parse(localStorage.getItem("purchase"))
 let balance =document.getElementById("wallet_balance");
 balance.innerText=data.amount;
 function BuyVoucher(el){
     if(data.amount>el.price){
         alert("Hurray! purchase successful")
-        localStorage.setItem("purchase",JSON.stringify(el))
-        balance.innerText=data.amount-el.price;
-        
+        arr.push(el)
+        localStorage.setItem("purchase",JSON.stringify(arr))
+        console.log(arr)
+        data.amount=parseInt(data.amount-el.price)
+        localStorage.setItem("user",JSON.stringify(data))
+        balance.innerText=data.amount;
+    }
+    else{
+      alert("Sorry! insufficient balance")
     }
 }
+BuyVoucher()
+

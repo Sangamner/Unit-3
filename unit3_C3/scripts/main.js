@@ -20,5 +20,7 @@ let details=new Obj(name,email,address,amount)
 
 localStorage.setItem("user",JSON.stringify(details))
 console.log(details)
+
+form.reset();
  
 }

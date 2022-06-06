@@ -45,3 +45,52 @@ button{
     background-color:aqua;
     margin-bottom: 15px;
 }
+
+#voucher_list {
+    text-align: center;
+    
+    display: grid;
+    gap: 30px;
+    margin: auto;
+    grid-template-columns: repeat(4,1fr);
+   
+}
+#voucher_list div {
+    text-align: center;
+    border: 1px solid rgb(184, 182, 182);
+}
+
+#voucher_list div img {
+    text-align: center;
+    width: 90%;
+    height: 300px;
+}
+
+/* purchase css */
+
+#purchasenavbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    margin-bottom: 20px;
+}
+
+#purchased_vouchers {
+    text-align: center;
+    
+    display: grid;
+    gap: 30px;
+    margin: auto;
+    grid-template-columns: repeat(4,1fr);
+   
+}
+#purchased_vouchers div {
+    text-align: center;
+    border: 1px solid rgb(184, 182, 182);
+}
+
+#purchased_vouchers div img {
+    text-align: center;
+    width: 90%;
+    height: 300px;
+}
