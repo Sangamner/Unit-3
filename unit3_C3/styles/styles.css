@@ -1,0 +1,47 @@
+#navbar{
+    display: flex;
+    background-color:aqua;
+}
+
+#navbar a{
+    margin-left: 85%;
+    margin-top: 20px;
+}
+form{
+    display: grid;
+    margin-top: 150px;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    font-family: sans-serif;
+    gap: 25px;
+    border: 1px solid black;
+    background-color: bisque;
+    margin-top: 100px;
+}
+input{
+    width: 80%;
+    height:30px;
+    margin: auto;
+}
+button{
+    width: 80%;
+    height:30px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+/* //voucher */
+
+#voucher_list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    text-align: center;
+}
+#vouchernavbar{
+    display: flex;
+    justify-content: space-between;
+    background-color:aqua;
+    margin-bottom: 15px;
+}
