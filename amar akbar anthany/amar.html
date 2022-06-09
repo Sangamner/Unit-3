@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  let Amar = {
+    name:"Amar",
+     skill: "singer",
+     location:"Goa",
+};
+
+let Akbar = {
+  name:"Akbar",
+  skill: "chef",
+  location:"Mumbai",
+};
+
+let Anthony = {
+  name:"Anthony",
+  skill: "Magician",
+  location:"Kashmir",
+};
+
+function a1() {
+  console.log(`Amar Learning ${this.skill} in Goa`);
+}
+
+function a2() {
+  console.log(`Akbar Learning ${this.skill} in mumbai`);
+}
+function a3() {
+  console.log(`Anthony Learning ${this.skill} in kashmir`);
+}
+
+a1.call(Akbar);
+a3.call(Akbar);
+a2.call(Amar)
+a3.call(Amar);
+a2.call(Anthony);
+
+
+
+
+
+
+
+
+
+
+
+
+//  let obj1  = {
+//    name:"Amar",
+//   skill: "singer",
+//   location:"Goa",
+// };
+
+// let obj2  = {
+//   name:"Akbar",
+//   skill: "chef",
+//   location:"Mumbai",
+// };
+
+// let obj3   = {
+//   name:"Anthony",
+//   skill: "Magician",
+//   location:"Kashmir",
+// };
+
+// function food(food) {
+//   console.log(` ${this.name} learning ${obj2.skill} and ${obj3.skill}`); 
+//   console.log(` ${obj2.name} learning ${obj1.skill} and ${obj3.skill}`); 
+
+
+// }
+
+// food()
+//  food.call(obj1);
+//  food.call(obj2);
+//  food.call(obj3);
+
+
+
+
+
+
+
+
+</script>
